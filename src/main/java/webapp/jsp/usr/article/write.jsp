@@ -21,7 +21,7 @@
     }
 </script>
 
-<form onsubmit="ArticleSave__submitForm(this); return false;">
+<form method="POST" onsubmit="ArticleSave__submitForm(this); return false;">
     <div>
         <span>제목</span>
         <div>
@@ -37,7 +37,6 @@
     </div>
 
     <div>
-        <span>작성</span>
         <div>
             <input type="submit" value="작성" />
         </div>

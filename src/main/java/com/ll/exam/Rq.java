@@ -64,5 +64,21 @@ public class Rq {
     }
 
 
+    public String getMethod() {
+        return req.getMethod();
+    }
+
+    public String getPath() {
+        return req.getRequestURI();
+    }
+
+    public String getParam(String paramName, String defaultValue) {
+        String value = req.getParameter(paramName);
+
+        if(value == null || value.trim().length() == 0){
+            return defaultValue;
+        }
+        return value;
+    }
 }
 
