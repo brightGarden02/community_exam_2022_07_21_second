@@ -25,4 +25,8 @@ public class ArticleRepository {
 
         return id;
     }
+
+    public List<ArticleDto> findAll() {
+        return datum;
+    }
 }
