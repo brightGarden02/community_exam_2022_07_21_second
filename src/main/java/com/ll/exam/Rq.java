@@ -117,5 +117,21 @@ public class Rq {
             return defaultValue;
         }
     }
+
+    public void replace(String uri, String msg) {
+        if (msg != null && msg.trim().length() > 0) {
+            println("""
+                    <script>
+                    alert("%s");
+                    </script>
+                    """.formatted(msg));
+        }
+
+        println("""
+                <script>
+                location.replace("%s");
+                </script>
+                """.formatted(uri));
+    }
 }
 

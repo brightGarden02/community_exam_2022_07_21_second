@@ -34,7 +34,8 @@ public class ArticleController {
 
         long id = articleService.write(title, body);
 
-        rq.println("%d번 게시물이 생성 되었습니다.".formatted(id));
+        rq.replace("/usr/article/detail/free/%d".formatted(id), "%d번 게시물이 생성 되었습니다.".formatted(id));
+
     }
 
     public void showDetail(Rq rq) {
@@ -74,8 +75,7 @@ public class ArticleController {
 
         articleService.delete(id);
 
-        rq.println("<div>%번 게시물이 삭제되었습니다.</div>".formatted(id));
-        rq.println("<div><a href=\"/usr/article/list/free\">리스트로 이동</a></div>".formatted(id));
+        rq.replace("/usr/article/list/free", "%d번 게시물이 삭제되었습니다.".formatted(id));
 
     }
 
@@ -106,8 +106,9 @@ public class ArticleController {
 
         articleService.modify(id, title, body);
 
-        rq.println("<div>%d번 게시물이 수정되었습니다.</div>".formatted(id));
-        rq.println("<div><a href=\"/usr/article/detail/free/%d\">수정된 글로 이동</a></div>".formatted(id));
+        // 브라우저에게 해당 URI로 이동하는 자바스크립트를 전송해주세요.
+        // 혹시 그 전에 전할 메세지가 있다면 alert 로 표시되도록 자바스크립트를 구성해주세요.
+        rq.replace("/usr/article/detail/free/%d".formatted(id), "%d번 게시물이 수정되었습니다.".formatted(id));
 
     }
 }
