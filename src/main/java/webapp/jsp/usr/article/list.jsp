@@ -22,6 +22,8 @@
                 <!-- flex-grow : 성장성 1 -->
                 <a class="flex-grow hover:underline hover:text-[red]" href="/usr/article/detail/free/<%=article.getId()%>"><%=article.getTitle()%></a>
                 <a onclick="if ( !confirm('정말로 삭제하시겠습니까?') ) return false;" class="hover:underline hover:text-[red] mr-2" href="/usr/article/delete/free/<%=article.getId()%>">삭제</a>
+                <a class="hover:underline hover:text-[red]" href="/usr/article/modify/free/<%=article.getId()%>">수정</a>
+
             </li>
             <% } %>
         </ul>
