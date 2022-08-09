@@ -5,6 +5,6 @@ import com.ll.exam.Rq;
 public class MemberController {
 
     public void showLogin(Rq rq) {
-        rq.appendBody("로그인");
+        rq.println("로그인");
     }
 }
