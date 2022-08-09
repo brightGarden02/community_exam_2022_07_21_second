@@ -16,7 +16,10 @@
             <li class="flex">
                 <a class="w-[40px] hover:underline hover:text-[red]" href="/usr/article/detail/free/${article.id}">${article.id}</a>
                 <a class="flex-grow hover:underline hover:text-[red]" href="/usr/article/detail/free/${article.id}">${article.title}</a>
-                <a onclick="if ( !confirm('정말로 삭제하시겠습니까?') ) return false;" class="hover:underline hover:text-[red] mr-2" href="/usr/article/delete/free/${article.id}">삭제</a>
+
+                <a onclick="if ( confirm('정말로 삭제하시겠습니까?') ) $(this).next().get(0).submit();" class="hover:underline hover:text-[red] mr-2">삭제</a>
+                <form hidden method="POST" action="/usr/article/delete/free/${article.id}"></form>
+
                 <a class="hover:underline hover:text-[red]" href="/usr/article/modify/free/${article.id}">수정</a>
 
                 </li>
