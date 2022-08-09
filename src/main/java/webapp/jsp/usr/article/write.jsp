@@ -27,14 +27,14 @@
     <div class="container px-3 mx-auto">
         <h1 class="font-bold text-lg">게시물 작성</h1>
         <form method="POST" onsubmit="ArticleSave__submitForm(this); return false;">
-            <div>
+            <div class="flex gap-3">
                 <span>제목</span>
                 <div>
                     <input name="title" type="text" maxlength="50" placeholder="제목을 입력해주세요." />
                 </div>
             </div>
 
-            <div>
+            <div class="flex gap-3">
                 <span>내용</span>
                 <div>
                     <input name="body" type="text" maxlength="300" placeholder="내용을 입력해주세요." />
