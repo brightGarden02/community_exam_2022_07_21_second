@@ -74,6 +74,8 @@ public class ArticleController {
 
         articleService.delete(id);
 
-        rq.appendBody("%d번 게시물이 삭제되었습니다.".formatted(id));
+        rq.appendBody("<div>%번 게시물이 삭제되었습니다.</div>".formatted(id));
+        rq.appendBody("<div><a href=\"/usr/article/list/free\">리스트로 이동</a></div>".formatted(id));
+
     }
 }
