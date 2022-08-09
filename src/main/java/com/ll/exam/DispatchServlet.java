@@ -28,7 +28,7 @@ public class DispatchServlet extends HttpServlet {
         // /usr/article/list/free 부분만 가져온다.
         String url = req.getRequestURI();
 
-        switch (rq.getMethod()) {
+        switch (rq.getRouteMethod()) {
             case "GET":
                 switch (rq.getActionPath()){
                     case "/usr/article/modify":

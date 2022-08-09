@@ -68,10 +68,6 @@ public class Rq {
     }
 
 
-    public String getMethod() {
-        return req.getMethod();
-    }
-
     public String getPath() {
         return req.getRequestURI();
     }
@@ -150,5 +146,15 @@ public class Rq {
                 """);
     }
 
+    public String getRouteMethod() {
+
+        String method = getParam("_method", "");
+
+        if (method.length() > 0 ) {
+            return method.toUpperCase();
+        }
+
+        return req.getMethod();
+    }
 }
 
